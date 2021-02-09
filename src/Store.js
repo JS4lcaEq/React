@@ -1,10 +1,10 @@
 
-    let store = {}
+let store = {}
 class Store {
 
 
     ini(name){
-        store[name] = {data:null, callbacks:[], loaded: null, saved: null, changed: null}
+        store[name] = {data:null, callbacks:[], meta: {loaded: null, saved: null, changed: null} }
     }
 
     Data(name, data){
@@ -13,8 +13,9 @@ class Store {
         }
         if(data){
             store[name].data = data;
+            store[name].changed = new Date()
             store[name].callbacks.forEach(callBack => {
-                callBack(store[name].data)
+                callBack(store[name])
             });
         }
         return store[name].data
@@ -37,10 +38,11 @@ class Store {
         .then(res => res.json())
         .then(
           (result) => {
-            store[name].data = result
-            store[name]
+            store[name].meta.loaded = new Date()  
+            this.Data(name, result)
           },
             (error) => {
+                console.log(error)
           }
         )              
     }

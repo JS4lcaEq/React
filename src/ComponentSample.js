@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Store from './MyClass';
+import Store from './Store';
 
 class ComponentSample extends React.Component {
     constructor(props) {
@@ -17,12 +17,12 @@ class ComponentSample extends React.Component {
 
       componentDidMount() {
 
-        Store.Subscribe("s1", (data)=>{
-          this.setState(state => ({dt: data}));
+        Store.Subscribe("s1", (store)=>{
+          this.setState(state => ({dt: store.data}));
         })
 
-        Store.Subscribe("loaded", (data)=>{
-          this.setState(state => ({loaded: data[1].id}));
+        Store.Subscribe("loaded", (store)=>{
+          this.setState(state => ({loaded: store.data[1].id}));
         })        
 
         this.timerID = setInterval(
