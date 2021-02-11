@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import ComponentSample from './ComponentSample';
 import MyComponent1 from './MyComponent1';
+import DebugComponent from './DebugComponent';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <p>code sample</p>
       <ComponentSample value="value"></ComponentSample>
       <MyComponent1></MyComponent1>
+      <DebugComponent debugDataStoreName="debugData"></DebugComponent>
     </div>
   );
 }

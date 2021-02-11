@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.debug-component {
+  background-color:khaki;
+  border: solid 1px goldenrod;
+  padding: 5px;
+  width: 25%;
+  top: 10px;
+  right: 10px;
+  position: absolute;
+}
+
+.my-component1 {
+  background-color:mediumpurple;
+  border: solid 1px lavender;
+  padding: 5px;
+  margin: 5px;
+}
+
+.component-sample {
+  background-color:olive;
+  border: solid 1px yellowgreen;
+  padding: 5px; 
+  margin: 5px; 
+}

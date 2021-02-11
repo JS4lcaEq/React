@@ -20,7 +20,7 @@ class MyComponent1 extends React.Component {
 
     render() {
       return (
-        <div className="MyComponent1">
+        <div className="my-component1">
             <p>MyComponent1 this.state.data = {this.state.data}</p>           
         </div>  
 
